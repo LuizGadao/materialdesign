@@ -1,6 +1,7 @@
 package br.com.luizgadao.materialdesign.fragment;
 
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import br.com.luizgadao.materialdesign.DetailsActivity;
 import br.com.luizgadao.materialdesign.LoadDisk;
 import br.com.luizgadao.materialdesign.R;
 import br.com.luizgadao.materialdesign.adapter.DiskAdapter;
@@ -96,6 +98,10 @@ public class ListDiskFragment extends Fragment implements DiskAdapter.OnClickDis
     @Override
     public void onClick(View view, int position, Disk disk) {
         Log.i(TAG, "click item: " + position);
+        Intent intent = new Intent(getContext(), DetailsActivity.class);
+        intent.putExtra(DetailsActivity.EXTRA_DISK, disk);
+
+        startActivity(intent);
     }
 
     private void showProgress(){

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
         <ImageView
-            android:id="@+id/imgCapa"
+            android:id="@+id/imgDisk"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_alignParentLeft="true"
@@ -27,8 +27,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
-            android:layout_toEndOf="@+id/imgCapa"
-            android:layout_toRightOf="@+id/imgCapa"
+            android:layout_toEndOf="@+id/imgDisk"
+            android:layout_toRightOf="@+id/imgDisk"
             tools:text="Title"/>
         <TextView
             android:id="@+id/txtYear"
@@ -37,8 +37,8 @@
             android:layout_below="@+id/txtTitle"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
-            android:layout_toEndOf="@+id/imgCapa"
-            android:layout_toRightOf="@+id/imgCapa"
+            android:layout_toEndOf="@+id/imgDisk"
+            android:layout_toRightOf="@+id/imgDisk"
             android:textSize="14sp"
             tools:text="2200"/>
     </RelativeLayout>

@@ -1,0 +1,78 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        cardview:cardBackgroundColor="@android:color/white"
+        cardview:cardCornerRadius="3dp"
+        cardview:cardElevation="2dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView
+                android:id="@+id/txtTitulo"
+                style="@style/Title"
+                tools:text="Title Here"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtAno"
+                style="@style/TextCommon"
+                tools:text="Year Here"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtGravadora"
+                style="@style/TextCommon"
+                tools:text="Some text here"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                style="@style/Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/formation" />
+            <TextView
+                android:id="@+id/txtFormacao"
+                style="@style/TextCommon"
+                tools:text="Some text here"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"
+        cardview:cardBackgroundColor="@android:color/white"
+        cardview:cardCornerRadius="3dp"
+        cardview:cardElevation="2dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView
+                style="@style/Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/musics" />
+            <TextView
+                android:id="@+id/txtMusicas"
+                style="@style/TextCommon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Some text here"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -73,7 +73,7 @@ public class DiskAdapter extends RecyclerView.Adapter<DiskAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
-        @Bind(R.id.imgCapa)
+        @Bind(R.id.imgDisk)
         ImageView imgCapa;
         @Bind(R.id.txtTitle)
         TextView txtTitle;
