@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -32,12 +34,14 @@ public class ListDiskFragment extends Fragment implements DiskAdapter.OnClickDis
 
     private static final String TAG = ListDiskFragment.class.getSimpleName();
 
+
     @Bind(R.id.recyclerView)
     RecyclerView mRecyclerView;
     @Bind(R.id.swipeRefresh)
     SwipeRefreshLayout mSwipeRefresh;
     private Disk[] mDisks;
     private DiskDownloadTask mTask;
+    private Disk diskSelected;
 
     public ListDiskFragment() {
         // Required empty public constructor
@@ -98,10 +102,32 @@ public class ListDiskFragment extends Fragment implements DiskAdapter.OnClickDis
     @Override
     public void onClick(View view, int position, Disk disk) {
         Log.i(TAG, "click item: " + position);
+        diskSelected = disk;
+        openDetails(diskSelected);
+
+        //openRevealAnimation(view, disk);
+    }
+
+    private void openRevealAnimation(View view, Disk disk) {
+        int cx = view.getLeft() + (view.getWidth() / 2);
+        int cy = view.getTop() + (view.getHeight() / 2);
+        Intent intent = new Intent(getContext(), DetailsActivity.class);
+        intent.putExtra(DetailsActivity.EXTRA_DISK, disk);
+        intent.putExtra(DetailsActivity.X_POS_ANIM, cx);
+        intent.putExtra(DetailsActivity.Y_POS_ANIM, cy);
+
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+    }
+
+    private void openDetails(Disk disk) {
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity());
+
         Intent intent = new Intent(getContext(), DetailsActivity.class);
         intent.putExtra(DetailsActivity.EXTRA_DISK, disk);
 
-        startActivity(intent);
+        ActivityCompat.startActivity(getActivity(), intent, options.toBundle());
+        //startActivity(intent);
     }
 
     private void showProgress(){
@@ -142,5 +168,4 @@ public class ListDiskFragment extends Fragment implements DiskAdapter.OnClickDis
             }
         }
     }
-
 }

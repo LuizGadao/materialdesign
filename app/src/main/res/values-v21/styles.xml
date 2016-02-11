@@ -1,6 +1,10 @@
 <resources>>
 
     <style name="AppTheme" parent="AppTheme.Base">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowEnterTransition">@android:transition/explode</item>
+        <item name="android:windowExitTransition">@android:transition/explode</item>
+        <item name="android:colorControlHighlight">@color/colorAccent</item>
         <item name="android:navigationBarColor">@color/colorPrimary</item>
     </style>
     <style name="AppTheme.Translucent" parent="AppTheme">
