@@ -1,5 +1,6 @@
 package br.com.luizgadao.materialdesign.adapter;
 
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -83,6 +84,10 @@ public class DiskAdapter extends RecyclerView.Adapter<DiskAdapter.ViewHolder> {
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+
+            ViewCompat.setTransitionName(imgCapa, "diskCover");
+            ViewCompat.setTransitionName(txtTitle, "title");
+            ViewCompat.setTransitionName(txtYear, "year");
         }
     }
 }

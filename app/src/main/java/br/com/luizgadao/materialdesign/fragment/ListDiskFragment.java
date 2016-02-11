@@ -105,7 +105,18 @@ public class ListDiskFragment extends Fragment implements DiskAdapter.OnClickDis
         diskSelected = disk;
         //openDetails(diskSelected);
 
-        openRevealAnimation(view, disk);
+        //openRevealAnimation(view, disk);
+
+        ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                getActivity(),
+                android.support.v4.util.Pair.create(view.findViewById(R.id.imgDisk), "diskCover"),
+                android.support.v4.util.Pair.create(view.findViewById(R.id.txtTitle), "title"),
+                android.support.v4.util.Pair.create(view.findViewById(R.id.txtYear), "year")
+        );
+
+        Intent intent = new Intent(getActivity(), DetailsActivity.class);
+        intent.putExtra(DetailsActivity.EXTRA_DISK, disk);
+        ActivityCompat.startActivity(getActivity(), intent, activityOptionsCompat.toBundle());
     }
 
     private void openRevealAnimation(View view, Disk disk) {
