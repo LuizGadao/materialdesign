@@ -75,13 +75,13 @@ public class DetailsActivity extends AppCompatActivity {
         loadImage(LoadDisk.URL + disk.capaGrande);
         fillFields(disk);
 
-        /*mCoordinator.setVisibility(View.INVISIBLE);
+        mCoordinator.setVisibility(View.INVISIBLE);
         mCoordinator.post(new Runnable() {
             @Override
             public void run() {
                 showOrHide(mCoordinator);
             }
-        });*/
+        });
     }
 
     private void fillFields(Disk disk) {

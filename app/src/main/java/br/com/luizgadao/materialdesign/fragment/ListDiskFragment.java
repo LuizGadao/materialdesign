@@ -103,9 +103,9 @@ public class ListDiskFragment extends Fragment implements DiskAdapter.OnClickDis
     public void onClick(View view, int position, Disk disk) {
         Log.i(TAG, "click item: " + position);
         diskSelected = disk;
-        openDetails(diskSelected);
+        //openDetails(diskSelected);
 
-        //openRevealAnimation(view, disk);
+        openRevealAnimation(view, disk);
     }
 
     private void openRevealAnimation(View view, Disk disk) {
